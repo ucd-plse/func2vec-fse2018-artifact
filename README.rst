@@ -15,6 +15,35 @@ Running func2vec consists of a pipeline with several stages:
 NOTE: Unzipping the artifact file creates an "artifact" directory. It is assumed that all commands are run from the root of that directory.
 This artifact directory should be the /program2vec  in the docker container (see "Running the docker container").
 
+Preliminary Steps - Download container and data directory
+=========================================================
+The func2vec / program2vec source code is included in this artifact, but two auxiliary files must be downloaded:
+
+1. The docker container with func2vec dependencies (alternatively, this can be built locally).
+
+	Because fun2vec has a large number of dependencies, including a specific version of LLVM (3.8.1),
+	func2vec is run inside a docker container to faciliate reproducibility.
+
+	The docker container is provided as a tar file that can be directly imported.
+
+2. The data directory containing the files neceessary to run the experiments described in the paper.
+
+	A description of each file in the data directory is included in README.rst
+
+If you want to perform the paper experiments or download the pre-built docker container, DOWNLOAD THESE FILES:
+	The docker container is available at: https://drive.google.com/open?id=1sgkFNrhnmehP-pm1ZwONuqBgggQhST7L
+	The data directory is available at: https://drive.google.com/open?id=1WrmJKJ6Us-81VZyMbMo4bs7ynSAz6ATh
+
+Depending on the speed of your internet connection, it might be faster to rebuild the docker container. See README.
+
+The data directory must be unzipped inside the artifact directory. The tree should look like this:
+
+func2vec-paper34-pathbased-function-embeddings/
+	data/
+	src/
+	...
+
+
 The data directory (download separately)
 ========================================
 
